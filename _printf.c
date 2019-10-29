@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 unsigned int x = 0, a = 0;
 int (*f)(va_list);
 va_list list;
-if (format[0] == '\0')
+if (format == NULL)
 return (-1);
 va_start(list, format);
 while (format && format[a])

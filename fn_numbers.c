@@ -129,7 +129,7 @@ int print_s(va_list s)
 char *string;
 int i = 0;
 string = va_arg(s, char *);
-if (string == '\0')
+if (string == NULL)
 {
 string = "(null)";
 }
@@ -139,4 +139,3 @@ _putchar(string[i]);
 }
 return (i);
 }
-

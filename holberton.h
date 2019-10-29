@@ -1,5 +1,9 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+
+int _putchar(char c);
+int _printf(const char *format, ...);
+
 #include <stdarg.h>
 /**
 * struct fondation - pointer to function with corresponding letter
@@ -12,8 +16,6 @@ char letter;
 int (*func)(va_list);
 } fondation;
 
-int _putchar(char c);
-int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
 int(*getspecifier(char))(va_list);
