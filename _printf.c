@@ -17,7 +17,7 @@ while (format[a] != '\0')
 if (format[a] == '%')
 {
 a++;
-if (format[a] == 's' || format[a] == 'c')
+if (format[a] == 's')
 {
 s = va_arg(all, char*);
 b = 0;
@@ -25,8 +25,12 @@ while (s[b] != '\0')
 {
 _putchar(s[b]);
 b++;
-r += b;
+r = b;
 }
+}
+else if (format[a] == 'c')
+{
+_putchar(va_arg(all, char*)[0]);
 }
 else if (format[a] == '\0')
 return (-1);
