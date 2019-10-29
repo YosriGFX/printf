@@ -4,15 +4,15 @@ function is used to print the “character, string, float, integer, octal and he
 
 ---
 
-__Usage__
+## __Usage__
 
-printf ("string", variable);
+`` printf ("string", variable);``
 
-__Project By__
+## __Project By__
 
-Inoubli Hafed && Ghorbel Yosri
+`` Inoubli Hafed && Ghorbel Yosri``
 
-__Authorized functions__
+## __Authorized functions__
  *  write (man 2 write)
  *  malloc (man 3 malloc)
  *  free (man 3 free)
