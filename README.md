@@ -8,7 +8,7 @@
 
 ## __Project By__
 
-`` Inoubli Hafed && Ghorbel Yosri``
+`` Inoubli Hafed && Ghorbel Yosri ``
 
 ## __Authorized functions__
  *  write (man 2 write)
