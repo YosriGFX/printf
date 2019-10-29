@@ -31,7 +31,7 @@ r += b;
 else if (format[a] == '\0')
 return (-1);
 else if (format[a] == '%')
-_putchar('\%');
+_putchar(format[a - 1]);
 }
 else
 {
