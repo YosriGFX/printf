@@ -1,10 +1,11 @@
-#include <stdarg.h>
 #include "holberton.h"
+#include <stdarg.h>
 /**
-* _printf - function to print anything
-* @format: given argument
-* Return: int
-*/
+ * _printf - _print
+ * @format: format of input
+ *
+ * Return: length of printed char
+ */
 int _printf(const char *format, ...)
 {
 unsigned int a = 0, b, r = 0;
@@ -23,10 +24,19 @@ b = 0;
 while (s[b] != '\0')
 {
 _putchar(s[b]);
-r += b;
 b++;
+r += b;
 }
 }
+else if (format[a] == '\0')
+return (-1);
+else if (format[a] == '%')
+_putchar('\%');
+}
+else
+{
+_putchar(format[a]);
+b++;
 }
 a++;
 }
