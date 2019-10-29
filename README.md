@@ -1,6 +1,6 @@
 # __Printf__
 
-`` __Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.__ ``
+__ ``Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.`` __
 
 ---
 
