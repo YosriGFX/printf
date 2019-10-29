@@ -5,13 +5,13 @@
 * @format: given argument
 * Return: int
 */
-int_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
-unsigned int a = 0, b;
+unsigned int a = 0, b, r = 0;
 char *s;
 va_list all;
 va_start(all, format);
-while(format[a] != '\0')
+while (format[a] != '\0')
 {
 if (format[a] == '%')
 {
@@ -23,11 +23,12 @@ b = 0;
 while (s[b] != '\0')
 {
 _putchar(s[b]);
+r += b;
 b++;
 }
-return (b);
 }
 }
 a++;
-}	
+}
+return (r);
 }
