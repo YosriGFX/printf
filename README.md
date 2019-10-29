@@ -1,10 +1,12 @@
 __printf__
-Printf function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
+function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.
 
 __Usage__
 
 printf ("string", variable);
+
 __Project By__
+
 Inoubli Hafed && Ghorbel Yosri
 
 __Authorized functions__
