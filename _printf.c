@@ -1,48 +1,49 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdarg.h>
+#include "holberton.h"
 /**
- * _printf - _print
- * @format: format of input
- *
- * Return: length of printed char
+ * _printf - A print function
+ * @format: pointer to a string
+ * Return: number of chars
  */
 int _printf(const char *format, ...)
 {
-unsigned int a = 0, b, r = 0;
-char *s;
-va_list all;
-va_start(all, format);
-while (format[a] != '\0')
-{
-if (format[a] == '%')
-{
-a++;
-if (format[a] == 's')
-{
-s = va_arg(all, char*);
-b = 0;
-while (s[b] != '\0')
-{
-_putchar(s[b]);
-b++;
-r = b;
-}
-}
-else if (format[a] == 'c')
-{
-_putchar(va_arg(all, char*)[0]);
-}
-else if (format[a] == '\0')
+unsigned int x = 0, a = 0;
+int (*f)(va_list);
+va_list list;
+if (format == '\0')
 return (-1);
-else if (format[a] == '%')
-_putchar(format[a - 1]);
-}
-else
+va_start(list, format);
+while (format && format[a])
+{
+if (format[a] != '%')
 {
 _putchar(format[a]);
-b++;
+x++;
+}
+else if (format[a] == '\0')
+return (x);
+else if (format[a] == '%' && format[a + 1] == '\0')
+return (-1);
+else if (format[a] == '%')
+{
+f = getspecifier(format[a + 1]);
+a += 1;
+if (f == '\0')
+{
+if (format[a] != '%')
+{
+_putchar(format[a - 1]);
+x += 1;
+}
+_putchar(format[a]);
+x += 1;
+}
+else
+x = x + f(list);
 }
 a++;
 }
-return (r);
+va_end(list);
+return (x);
 }
