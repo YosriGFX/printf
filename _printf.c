@@ -1,34 +1,49 @@
+#include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 /**
-* _printf - function to print anything
-* @format: given argument
-* Return: int
-*/
+ * _printf - A print function
+ * @format: pointer to a string
+ * Return: number of chars
+ */
 int _printf(const char *format, ...)
 {
-unsigned int a = 0, b, r = 0;
-char *s;
-va_list all;
-va_start(all, format);
-while (format[a] != '\0')
+unsigned int x = 0, a = 0;
+int (*f)(va_list);
+va_list list;
+if (format == NULL)
+return (-1);
+va_start(list, format);
+while (format && format[a])
 {
-if (format[a] == '%')
+if (format[a] != '%')
 {
+_putchar(format[a]);
+x++;
+}
+else if (format[a] == '\0')
+return (x);
+else if (format[a] == '%' && format[a + 1] == '\0')
+return (-1);
+else if (format[a] == '%')
+{
+f = getspecifier(format[a + 1]);
+a += 1;
+if (f == NULL)
+{
+if (format[a] != '%')
+{
+_putchar(format[a - 1]);
+x += 1;
+}
+_putchar(format[a]);
+x += 1;
+}
+else
+x = x + f(list);
+}
 a++;
-if (format[a] == 's' || format[a] == 'c')
-{
-s = va_arg(all, char*);
-b = 0;
-while (s[b] != '\0')
-{
-_putchar(s[b]);
-r += b;
-b++;
 }
-}
-}
-a++;
-}
-return (r);
+va_end(list);
+return (x);
 }
