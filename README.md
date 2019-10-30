@@ -4,7 +4,7 @@
 
 ## __Usage__
 
-`` printf ("string", variable);``
+`` printf ("string", variable); ``
 
 ## __Project By__
 
